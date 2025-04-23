@@ -15,13 +15,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($transaksi as $item)
+        @foreach($transaksi as $index => $item)
         <tr>
             <td>{{ $item['tanggal'] }}</td>
             <td>{{ $item['jenis'] }}</td>
             <td>{{ $item['jumlah'] }}</td>
             <td>
-                <a href="/kategori/delete/{{ $loop->index }}" class="btn btn-danger btn-sm">Hapus</a>
+                <form method="POST" action="{{ route('koin.delete', $index) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                </form>
+
             </td>
         </tr>
         @endforeach

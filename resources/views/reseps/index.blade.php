@@ -1,21 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<nav class="navbar navbar-expand-lg" style="background-color: #d4ede4;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">eCommerce</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->is('produk*') ? 'active' : '' }}" href="{{ route('resep.index') }}">Resep</a>
-            </ul>
-        </div>
-    </div>
-</nav>
 <div class="container mt-4">
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -56,10 +41,6 @@
                             </span>
                         </td>
                         <td>
-                            <a href="{{ route('resep.edit', $resep['id']) }}" class="btn btn-outline-primary btn-sm me-1">
-                                <i class="bi bi-pencil-square"></i> Edit
-                            </a>
-
                             <form action="{{ route('resep.destroy', $resep['id']) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus resep ini?');">
                                 @csrf
                                 @method('DELETE')

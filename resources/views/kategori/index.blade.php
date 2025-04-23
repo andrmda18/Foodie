@@ -25,7 +25,6 @@
                 <td>{{ $k['nama'] }}</td>
                 <td><img src="{{ asset('storage/'.$k['foto']) }}" width="100"></td>
                 <td>
-                    <a href="/kategori/edit/{{ $loop->index }}" class="btn btn-warning btn-sm">Edit</a>
                     <a href="/kategori/delete/{{ $loop->index }}" class="btn btn-danger btn-sm">Hapus</a>
                 </td>
             </tr>

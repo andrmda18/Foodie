@@ -48,14 +48,6 @@ class ResepController extends Controller
     return redirect()->route('resep.index')->with('success', 'Resep berhasil ditambahkan!');
     }
 
-    
-
-    public function edit($id)
-    {
-        $resep = collect($this->reseps)->firstWhere('id', $id);
-        return view('reseps.edit', ['resep' => $resep]);
-    }
-
     public function update(Request $request, $id)
     {
         return redirect()->route('resep.index')->with('success', 'Resep berhasil diperbarui!');

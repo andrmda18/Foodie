@@ -16,7 +16,7 @@
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a class="nav-link" href="{{ route('resep.index') }}">Resep</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('kategori.index') }}">Kategori</a></li>
-                            
+                            <li class="nav-item"><a class="nav-link" href="{{ route('koin.index') }}">Koin</a></li>
                         </ul>
                     </div>
                 </div>
