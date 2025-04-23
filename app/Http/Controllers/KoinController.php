@@ -11,17 +11,17 @@ class KoinController extends Controller
     public function showKoin()
     {
         $transaksi = session('transaksi', []);
-        return view('koin', compact('transaksi'));
+        return view('koin.index', compact('transaksi'));
     }
 
     public function showTopUp()
     {
-        return view('topup');
+        return view('koin.topup');
     }
 
     public function showTarik()
     {
-        return view('tarik');
+        return view('koin.tarik');
     }
 
     public function processTopUp(Request $request)
@@ -36,7 +36,7 @@ class KoinController extends Controller
         ];
         session(['transaksi' => $transaksi]);
 
-        return redirect()->route('dashboard')->with('message', "Top up $jumlah koin berhasil!");
+        return redirect()->route('koin.index')->with('message', "Top up $jumlah koin berhasil!");
     }
 
     public function processTarik(Request $request)
@@ -51,7 +51,7 @@ class KoinController extends Controller
         ];
         session(['transaksi' => $transaksi]);
 
-        return redirect()->route('dashboard')->with('message', "Penarikan $jumlah koin berhasil!");
+        return redirect()->route('koin.index')->with('message', "Penarikan $jumlah koin berhasil!");
     }
 
     public function showDashboard()
@@ -65,6 +65,6 @@ class KoinController extends Controller
         unset($transaksi[$id]);
         session(['transaksi' => array_values($transaksi)]);
 
-        return redirect()->route('koin');
+        return redirect()->route('koin.index');
     }
 }

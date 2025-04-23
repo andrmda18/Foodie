@@ -37,7 +37,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Modul Koin</h5>
                     <p class="card-text">Atur sistem reward dan penukaran koin pengguna.</p>
-
+                    <a href="{{ route('koin.index') }}" class="btn btn-warning">Kelola Koin</a>
                 </div>
             </div>
         </div>

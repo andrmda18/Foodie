@@ -39,7 +39,7 @@ class KategoriController extends Controller
         session(['kategori' => $kategori]);
 
         // Redirect ke dashboard dengan pesan sukses
-        return redirect('/dashboard')->with('success', 'Kategori berhasil ditambahkan!');
+        return redirect('kategori/index')->with('success', 'Kategori berhasil ditambahkan!');
     }
 
     // Tampilkan dashboard
