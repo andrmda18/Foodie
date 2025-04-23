@@ -13,6 +13,12 @@
         </div>
     @endif
 
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="card p-4">
         <form action="/kategori/store" method="POST" enctype="multipart/form-data">
             @csrf

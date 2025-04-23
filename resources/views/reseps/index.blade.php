@@ -24,6 +24,7 @@
                     <tr>
                         <th>Gambar</th>
                         <th>Judul Resep</th>
+                        <th>Langkah - Langkah</th>
                         <th>Tanggal</th>
                         <th>Aksi</th>
                     </tr>
@@ -35,6 +36,7 @@
                             <img src="{{ asset($resep['gambar']) }}" alt="Gambar" class="rounded shadow-sm" width="80">
                         </td>
                         <td class="fw-semibold text-start">{{ $resep['judul'] }}</td>
+                        <td class="text-start">{{ $resep['langkah'] }}</td>
                         <td>
                             <span class="badge bg-primary">
                                 <i class="bi bi-calendar2"></i> {{ $resep['tanggal'] }}

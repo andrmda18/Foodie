@@ -4,6 +4,10 @@
 
 @section('content')
 <h1>Koin Saya</h1>
+<div class="alert alert-info">
+    <strong>Total Saldo Koin:</strong> {{ $saldo }}
+</div>
+
 
 <table class="table">
     <thead>

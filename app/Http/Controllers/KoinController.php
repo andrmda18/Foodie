@@ -11,7 +11,17 @@ class KoinController extends Controller
     public function showKoin()
     {
         $transaksi = session('transaksi', []);
-        return view('koin.index', compact('transaksi'));
+
+        $saldo = 0;
+        foreach ($transaksi as $item) {
+            if ($item['jenis'] === 'top up') {
+                $saldo += $item['jumlah'];
+            } elseif ($item['jenis'] === 'penarikan') {
+                $saldo -= $item['jumlah'];
+            }
+        }
+
+        return view('koin.index', compact('transaksi', 'saldo'));
     }
 
     public function showTopUp()

@@ -10,6 +10,10 @@
                 <input type="text" class="form-control" id="judulResep" name="judul" placeholder="Contoh: Nasi Goreng Spesial">
             </div>
             <div class="mb-3">
+                <label for="langkahLangkah" class="form-label">Langkah-Langkah</label>
+                <textarea class="form-control" id="langkahLangkah" name="langkah" rows="5" placeholder="Contoh: 1. Panaskan wajan..."></textarea>
+            </div>
+            <div class="mb-3">
                 <label for="tanggalResep" class="form-label">Tanggal</label>
                 <input type="date" class="form-control" id="tanggalResep" name="tanggal">
             </div>
